@@ -2,7 +2,7 @@
 
 #include "ofConstants.h"
 
-/// Based on ofMatrix2x2
+/// Based on ofMatrix3x3
 
 /// \brief A 2x2 Matrix
 ///
