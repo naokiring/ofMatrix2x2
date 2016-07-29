@@ -74,7 +74,7 @@ float ofMatrix2x2::determinant(const ofMatrix2x2& A) {
 
 
 /*
-* Inverse of a 3x3 matrix
+* Inverse of a 2x2 matrix
   the inverse is the adjoint divided through the determinant
   find the matrix of minors (minor = determinant of 2x2 matrix of the 2 rows/colums current element is NOT in)
   turn them in cofactors (= change some of the signs)
@@ -176,7 +176,7 @@ void ofMatrix2x2::operator*=(float scalar) {
 }
 
  /*
- * Multiply a 3x3 matrix with a 3x3 matrix
+ * Multiply a 2x2 matrix with a 2x2 matrix
  */
 ofMatrix2x2 ofMatrix2x2::operator*(const ofMatrix2x2& B) {
 	ofMatrix2x2 C;
@@ -237,3 +237,9 @@ istream& operator>>(istream& is, ofMatrix2x2& M) {
 }
 
 
+ofVec2f ofMatrix2x2::operator*(const ofVec2f& v) {
+	ofVec2f ret;
+	ret.x = a * v.x + b * v.y;
+    ret.y = c * v.x + d * v.y;
+	return ret;
+}

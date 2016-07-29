@@ -1,8 +1,9 @@
 #pragma once
 
 #include "ofConstants.h"
+#include "ofVec2f.h"
 
-/// Based on ofMatrix3x3
+/// Based on ofMatrix2x2
 
 /// \brief A 2x2 Matrix
 ///
@@ -136,5 +137,14 @@ public:
 	friend istream& operator>>(istream& is, ofMatrix2x2& M);
 	
 	/// \}
+    
+    //---------------------
+    /// \name Operators to ofVec2f
+    /// \{
+    
+    ofVec2f operator*(const ofVec2f& v);
+    
+    /// \}
+    
 };
 
